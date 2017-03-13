@@ -53,6 +53,7 @@ public class LambdaExpressionsEx2 {
             .collect(Collectors.toMap(Teacher::getGender(),  Employee::getName,
                                       (oldValue, newValue)  ->  String.join(", ", oldValue,  newValue))); ));
 */
+        /*
         Map<Gender, List<Teacher>> map = Stream.of(new Teacher("Ravaut", Gender.MALE),
                 new Teacher("Soukane", Gender.FEMALE),
                 new Teacher("Palasi", Gender.FEMALE),
@@ -66,7 +67,7 @@ public class LambdaExpressionsEx2 {
         
         
         
-    System.out.println(map);
+    System.out.println(map);*/
   
 }
 
