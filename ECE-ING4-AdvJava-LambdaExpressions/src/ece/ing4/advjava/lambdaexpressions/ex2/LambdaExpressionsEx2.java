@@ -5,10 +5,13 @@
  */
 package ece.ing4.advjava.lambdaexpressions.ex2;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.OptionalDouble;
 import java.util.Random;
-import java.util.function.Function;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -25,52 +28,43 @@ public class LambdaExpressionsEx2 {
         /**
          * Q1-Q2
          */
-        int avg = new Random().ints(1000, 0, 100).sum()/1000;
-        System.out.println(avg);
-        
+        OptionalDouble avg = new Random().ints(1000, 0, 100).average();
+        System.out.println("Average of 1000 rand between 0 and 100 is\n" 
+                + avg.getAsDouble()
+                +"\n");
+
         /**
          * Q3
          */
-        Stream s = Stream.of(new Teacher("Ravaut", Gender.MALE),
-                new Teacher("Soukane", Gender.FEMALE),
-                new Teacher("Palasi", Gender.FEMALE),
-                new Teacher("Segado", Gender.MALE),
-                new Teacher("Diedler", Gender.MALE));
-        
-        List <Gender> names  = Stream.of(new Teacher("Ravaut", Gender.MALE),
-                new Teacher("Soukane", Gender.FEMALE),
-                new Teacher("Palasi", Gender.FEMALE),
-                new Teacher("Segado", Gender.MALE),
-                new Teacher("Diedler", Gender.MALE))
-            .map(t -> t.getGender())
-            .collect (Collectors.toList());
-        /*
+        // Map
         Map<Gender, List<Teacher>> map = Stream.of(new Teacher("Ravaut", Gender.MALE),
                 new Teacher("Soukane", Gender.FEMALE),
                 new Teacher("Palasi", Gender.FEMALE),
                 new Teacher("Segado", Gender.MALE),
                 new Teacher("Diedler", Gender.MALE))
-            .collect(Collectors.toMap(Teacher::getGender(),  Employee::getName,
-                                      (oldValue, newValue)  ->  String.join(", ", oldValue,  newValue))); ));
-*/
-        /*
-        Map<Gender, List<Teacher>> map = Stream.of(new Teacher("Ravaut", Gender.MALE),
-                new Teacher("Soukane", Gender.FEMALE),
-                new Teacher("Palasi", Gender.FEMALE),
-                new Teacher("Segado", Gender.MALE),
-                new Teacher("Diedler", Gender.MALE))
-                .map(t -> t)
-                .collect(Collectors.toMap(key -> key.getGender(), 
-                    t -> t,
-                    (oldList, t) -> oldList.add(t)
-                    )); 
+                //.map(getGender)
+                .collect(Collectors.toMap(t -> t.getGender(),
+                        Arrays::asList,
+                        (t1, t2) -> {
+                            List<Teacher> t = new ArrayList<>();
+                            t.addAll(t1);
+                            t.addAll(t2);
+                            return t;
+                        }
+                ));
         
-        
-        
-    System.out.println(map);*/
-  
-}
+        // Display        
+        map.entrySet().stream().map((set) -> {
+            System.out.println(set.getKey());
+            return set;
+        }).map((set) -> {
+            set.getValue().forEach((t) -> {
+                System.out.println("\t" + t.getName());
+            });
+            return set;
+        }).forEachOrdered((_item) -> {
+            System.out.println("\n");
+        });
+    }
 
 }
-
-
