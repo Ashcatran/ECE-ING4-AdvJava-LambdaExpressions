@@ -9,15 +9,15 @@ import java.util.Comparator;
 import java.util.TreeSet;
 
 /**
- *
- * @author Kevin Nicolas
+ * Lambda Expression
+ * @author Kevin, Nicolas
  */
 public class LambdaExpressionsEx1 {
 
     /**
      * @param args the command line arguments
      */
-    public void main(String[] args) {
+    public static void main(String[] args) {
         /**
          * Q1
          * Lambda expression of Runnable

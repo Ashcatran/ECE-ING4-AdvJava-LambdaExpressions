@@ -6,8 +6,8 @@
 package ece.ing4.advjava.lambdaexpressions.ex2;
 
 /**
- *
- * @author Kevin
+ * Given Model
+ * @author Kevin, Nicolas
  */
 public class Teacher {
     private final String name;
@@ -20,5 +20,9 @@ public class Teacher {
 
     public Gender getGender() {
         return gender;
+    }
+
+    public String getName() {
+        return name;
     }
 }

@@ -11,12 +11,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.OptionalDouble;
 import java.util.Random;
-import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- *
+ * Average of 1000 rand between 0 and 100
+ * and 
+ * Map of teacher from stream
  * @author Kevin Nicolas
  */
 public class LambdaExpressionsEx2 {
@@ -27,6 +28,7 @@ public class LambdaExpressionsEx2 {
     public static void main(String[] args) {
         /**
          * Q1-Q2
+         * Average of 1000 rand between 0 and 100
          */
         OptionalDouble avg = new Random().ints(1000, 0, 100).average();
         System.out.println("Average of 1000 rand between 0 and 100 is\n" 

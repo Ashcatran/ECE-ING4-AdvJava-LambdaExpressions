@@ -6,8 +6,8 @@
 package ece.ing4.advjava.lambdaexpressions.ex2;
 
 /**
- *
- * @author Kevin
+ * Given Model
+ * @author Kevin, Nicolas
  */
 public enum Gender {
     MALE,
