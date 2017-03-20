@@ -21,7 +21,9 @@ public class Nil implements Seq {
     public Nil() {
     }
 
-    // Nil last element accept String "END"
+    /**
+     * Nil last element accept String "END"
+     */
     @Override
     public void forEach(Consumer consumer) {
         consumer.accept("END");
@@ -35,7 +37,8 @@ public class Nil implements Seq {
      */
     @Override
     public Seq prepend(Object element) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet.");
     }
     
 }
