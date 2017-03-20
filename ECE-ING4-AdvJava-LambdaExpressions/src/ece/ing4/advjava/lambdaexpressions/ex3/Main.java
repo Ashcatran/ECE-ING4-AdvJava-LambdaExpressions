@@ -11,9 +11,12 @@ package ece.ing4.advjava.lambdaexpressions.ex3;
  */
 public class Main {
 
+    /**
+     * Main function
+     * @param args 
+     */
     public static void main(String[] args) {
-
-        /**
+        /*
          * Static nested classes are accessed using the enclosing class name. It
          * does not have reference to the nesting instance. So it cannot invoke
          * non-tatic fields of the class within which it is nested.
@@ -23,6 +26,7 @@ public class Main {
          */
         Seq seq = Seq.nil();
         Seq seq2 = seq.prepend("world").prepend("hello");
+        /* Test for object */
         //Seq seq3 = seq.prepend("world").prepend(3);
         seq2.forEach (System.out :: println);
     }

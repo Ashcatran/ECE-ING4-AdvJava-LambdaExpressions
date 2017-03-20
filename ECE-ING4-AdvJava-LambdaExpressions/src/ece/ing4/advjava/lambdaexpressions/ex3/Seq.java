@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- *
+ * Seq interface with T parameter
  * @author Kevin, Nicolas
  * @param <T>
  */
@@ -31,7 +31,6 @@ public interface Seq <T> {
 
     /**
      * Apply a function for each element of the sequence
-     *
      * @param consumer
      */
     public void forEach(Consumer consumer);
@@ -56,7 +55,7 @@ public interface Seq <T> {
         }
 
         /**
-         * The signature of this method is : forEach(Consumer consumer)
+         * Accept the element of the class before going to the next
          */
         @Override
         public void forEach(Consumer consumer) {
@@ -78,15 +77,19 @@ public interface Seq <T> {
 
     /**
      * Last object
+     * Nil inner class
      * @param <T>
      */
     public class Nil <T> implements Seq <T> {
 
+        /**
+         * Empty constructor
+         */
         public Nil() {
         }
 
         /**
-         * "END" as last item
+         *  Nil last element accept String "END"
          * @param consumer 
          */
         @Override
@@ -95,7 +98,7 @@ public interface Seq <T> {
         }
 
         /**
-         * New Cons with this as next
+         * New Cons with this nill as next
          * @param element
          * @return 
          */

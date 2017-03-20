@@ -15,10 +15,11 @@ import java.util.TreeSet;
 public class LambdaExpressionsEx1 {
 
     /**
+     * Main function
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        /**
+        /*
          * Q1
          * Lambda expression of Runnable
          */
@@ -26,20 +27,21 @@ public class LambdaExpressionsEx1 {
             System.out.println("Hello world !");
         });
         thread.start();
-        /**
+        
+        /*
          * Q2
          * Iterator is an interface provided by JavaAPI which is 
          * a funtional interface
          */        
         
-        /**
+        /*
          * Q3:
          * This second expression is more readable (shorter)
          * no nested constructor
          * no override of function, only one lambda expression 
          */
         
-        /**
+        /*
          * Q4
          */
         TreeSet<String> treeSet = new TreeSet<>(

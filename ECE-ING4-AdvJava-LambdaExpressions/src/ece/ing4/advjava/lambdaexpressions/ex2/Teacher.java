@@ -10,18 +10,33 @@ package ece.ing4.advjava.lambdaexpressions.ex2;
  * @author Kevin, Nicolas
  */
 public class Teacher {
+    
     private final String name;
     private final Gender gender;
 
+    /**
+     * Constructor
+     * @param name
+     * @param gender 
+     */
     public Teacher(String name, Gender gender) {
         this.name = name;
         this.gender = gender;
     }
-
+    
+    /**
+     * Get gender of the teacher
+     * @return 
+     */
     public Gender getGender() {
         return gender;
     }
 
+    /**
+     * Get name of the teacher
+     * used for display
+     * @return 
+     */
     public String getName() {
         return name;
     }
